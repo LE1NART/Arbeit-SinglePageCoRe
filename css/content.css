@@ -1,0 +1,56 @@
+.content{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:40px;
+    
+    padding: 0 1svw 0 1svw;
+}
+
+.header-content{
+    display: flex;
+    justify-content: space-around;
+}
+
+.text{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text h1{
+    align-self: center;
+}
+
+.table-Buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+.table-Buttons form{
+    display: flex;
+    gap:10px;
+}
+
+.file-Buttons{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    row-gap: 15px;
+}
+
+
+button{
+    background-color:rgb(207, 218, 227);
+    border:solid;
+    border-color: rgb(207, 218, 227);
+    border-radius: 7px;
+    color:rgb(22, 71, 112);
+    text-align: center;
+    text-decoration: none;
+    font-size:14px;
+}

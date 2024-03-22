@@ -1,0 +1,60 @@
+.uploadConfirm{
+    position: fixed;
+    background: rgba(0,0,0,0.7);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    visibility: hidden;
+    opacity: 1;
+    transition: opacity 500ms;
+}
+
+.uploadConfirm .innerWindow{
+    position: relative;
+    margin: 100px auto;
+    width: 25%;
+    height: 20%;
+    background-color: white;
+    border-radius: 30px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.uploadConfirm .innerWindow > *{
+    margin: 0px;
+}
+
+input[type=submit]{
+    background-color:rgb(207, 218, 227);
+    border:solid;
+    border-color: rgb(207, 218, 227);
+    border-radius: 7px;
+    color:rgb(22, 71, 112);
+    text-align: center;
+    text-decoration: none;
+    font-size:14px;
+}
+
+#closeButton{
+    position: absolute;
+    top:10px;
+    right: 15px;
+
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: white;
+    border: none;
+
+    transition: all 150ms;
+}
+
+#closeButton:hover{
+    color:rgb(22, 71, 112);
+}

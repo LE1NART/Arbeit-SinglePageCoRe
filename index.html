@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoRe</title>
+
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/content.css">
+    <link rel="stylesheet" type="text/css" href="css/tableContent.css">
+    <link rel="stylesheet" type="text/css" href="css/uploadConfirm.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    
+
+    <script defer src="./js/buttons.js"></script>
+    <script defer src="./js/table.js"></script>
+
+
+</head>
+<body onload="createPremadeTable('de')">
+    <header>
+        <a href="https://www.uni-potsdam.de/de/physikdidaktik/willkommen"><img src="media/logo_grey.jpg" alt="Logo" id="logo"></a>
+        <nav>
+            <a href="./index.html">DE</a>
+            <a href="./index.eng.html">ENG</a> 
+        </nav>
+    </header>
+    <div class="content">
+        <div class="header-content">
+            <div class="text">
+                <h1>Content Representation</h1>
+                <p>Bearbeiten Sie die Content Representation indem Sie... <br>
+                <ol>
+                    <li>... auf Grundlage Ihres fachlichen Wissens die Big Ideas einer Thematik identifizieren und als Keywords in der ersten Zeile festhalten und</li>
+                    <li>... die Big Ideas vor dem Hintergrund Ihres pädagogischen und fachdidaktischen Wissens entlang der Leitfragen spaltenweise diskutieren. </li>
+                </ol>
+                <p>Schreiben Sie möglichst ganze Sätze.</p>
+            </div>
+            <div class="table-Buttons">
+                <form>
+                    <label for="colnum">Spalten Nummer</label>
+                    <input id="column-number" name="colnum" type="number" min="1">
+                </form>
+                <button onclick="addColumn()">Spalte Hinzufügen</button>
+                <button onclick="deleteColumn()">Spalte entfernen</button>
+            </div>
+        </div>
+        <div class="table-content">
+            <table id="myTable">
+
+            </table>
+        </div>
+        <div class="file-Buttons">
+                <div>
+                    <label for="fname">Datei Name:</label>
+                    <input id="file-name" name="fname" type="text" value="CoRe">
+                </div>
+                <div>
+                    <button onclick="uploadWindow()">Hochladen</button>
+                    <button onclick="fragebogenZuCSV()">Speichern als .csv</button>
+                    <button onclick="fragebogenZuTXT()">Speichern als.txt</button>
+                </div>
+           
+        </div>
+    </div>
+    <div class="uploadConfirm" id="uploadConfirmWindow">
+        <div class="innerWindow">
+            <h3>Upload Bestätigung</h3>
+            <p>Zum Upload wird ein weiteres Fenster geöffnet.</p>
+            <form action="/cgi-bin/upload.py" method="post" enctype="multipart/form-data" onsubmit="uploadWindow()">
+                <input id="uploadName" type="hidden" name="name" value="" />
+                <input id="uploadFile" type="hidden" name="file" value=""/>
+                <input id="uploadButton" type="submit" value="Upload" formtarget="_blank"/>
+            </form>
+            <button id="closeButton" onclick="changeVisibility()">&times;</button>
+        </div>
+    </div>
+</body>
+</html>
